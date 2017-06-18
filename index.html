@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="myfunction()">Dodaj element listy</button>
+    <button type="button" onclick="myfunctiondel()">Usuń element listy</button>
+    <ul id="lista1">
+        <li>Temat 1</li>
+
+    </ul>
+    <script src="dodaj.js">
+    </script>
+    <script type="text/javascript">
+        function myfunction() {
+            var lista = document.querySelector("#lista1")
+            var dodaj = document.createElement("li"),
+                tekst = document.createTextNode("Temat ");
+
+            dodaj.appendChild(tekst);
+            lista.appendChild(dodaj);
+
+        }
+        function myfunctiondel() {
+            var lista = document.querySelector("#lista1")
+            lista.removeChild(lista.querySelector(":last-child"));
+
+        }
+    </script>
+</body>
+
+</html>
